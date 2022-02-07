@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+    <title><%= htmlWebpackPlugin.options.title %></title>
+
+
+      <!-- Algorithms can be found here -->
+      <!-- https://docs.google.com/spreadsheets/d/1zNcvRkHht24NjRhHZmAiE2WHu36gJ19dg_t-aAjHaJQ/edit#gid=0 -->
+  </head>
+  <body>
+    <noscript>
+      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+    </noscript>
+
+    <!--TODO
+    docker build -t vuejs-cookbook/dockerize-vuejs-app .
+    docker run -it -p 8080:8080 --rm --name dockerize-vuejs-app-1 vuejs-cookbook/dockerize-vuejs-app
+    1. Add minimal Front-End for testing
+    2. Choose theme for testing, speed and amount of steps
+    3. Each algorithm can be represented as a strategy and can be changed during the runtime
+ -->
+
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+  </body>
+</html>
