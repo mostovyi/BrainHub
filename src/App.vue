@@ -4,6 +4,7 @@
     <input v-model.number="repeat" placeholder="Введите количество повторений">
     <p>Количество повторений: {{ repeat }}</p>
     <div>
+      <!-- Displaying buttons -->
       <button
           v-for="tab in tabs"
           v-bind:key="tab"
@@ -11,6 +12,7 @@
           v-on:click="currentTab = tab"
         >{{ tab }}</button>
       <p>Выбранный режим: {{ currentTab }}</p>
+      <!-- Running algorithm by pressing on button. Passing the value to selected component -->
       <component v-bind:is="currentTab" v-bind:repeats="repeat" class="tab"></component>
     </div>
   </div>
@@ -18,14 +20,19 @@
 
 <script>
 
-import EasyOneTwo from "./components/EasyOneTwo.vue";
-import EasyOneThree from "./components/EasyOneThree.vue";
-import EasyOneFour from "./components/EasyOneFour.vue";
-import EasyOneFive from "./components/EasyOneFive.vue";
-import EasyOneSix from "./components/EasyOneSix.vue";
-import EasyOneSeven from "./components/EasyOneSeven.vue";
-import EasyOneEight from "./components/EasyOneEight.vue";
-import EasyOneNine from "./components/EasyOneNine.vue";
+//Components import
+import EasyOneTwo from "@/components/EasyOneTwo.vue";
+import EasyOneThree from "@/components/EasyOneThree.vue";
+import EasyOneFour from "@/components/EasyOneFour.vue";
+import EasyOneFive from "@/components/EasyOneFive.vue";
+import EasyOneSix from "@/components/EasyOneSix.vue";
+import EasyOneSeven from "@/components/EasyOneSeven.vue";
+import EasyOneEight from "@/components/EasyOneEight.vue";
+import EasyOneNine from "@/components/EasyOneNine.vue";
+import BrotherOne from "@/components/BrotherOne.vue";
+import BrotherTwo from "@/components/BrotherTwo.vue";
+import BrotherThree from "@/components/BrotherThree.vue";
+import BrotherFour from "@/components/BrotherFour.vue";
 
 
 export default {
@@ -33,12 +40,14 @@ export default {
   data: function () {
     return {
       currentTab: "EasyOneTwo",
-      tabs: ["EasyOneTwo", "EasyOneThree", "EasyOneFour", "EasyOneFive", "EasyOneSix", "EasyOneSeven", "EasyOneEight", "EasyOneNine"],
+      tabs: ["EasyOneTwo", "EasyOneThree", "EasyOneFour", "EasyOneFive", "EasyOneSix", "EasyOneSeven", "EasyOneEight", "EasyOneNine",
+      "BrotherOne", "BrotherTwo", "BrotherThree", "BrotherFour"],
       repeat: 0
     }
   },
   components: {
-    EasyOneTwo, EasyOneThree, EasyOneFour, EasyOneFive, EasyOneSix, EasyOneSeven, EasyOneEight, EasyOneNine
+    EasyOneTwo, EasyOneThree, EasyOneFour, EasyOneFive, EasyOneSix, EasyOneSeven, EasyOneEight, EasyOneNine,
+    BrotherOne, BrotherTwo, BrotherThree, BrotherFour
   }
 }
 </script>
@@ -46,6 +55,7 @@ export default {
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-size: 24px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -63,6 +73,7 @@ button {
   display: inline-block;
   font-size: 16px;
   margin-right: 1%;
+  margin-bottom: 1%;
 }
 
 input {

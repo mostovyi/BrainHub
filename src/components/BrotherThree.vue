@@ -9,12 +9,9 @@
   </div>
 </template>
 
-
 <script>
-
-// For now this function works, but input parameters are hardcoded
 export default {
-  name: "EasyOneTwo",
+  name: "BrotherThree",
   data: function () {
     return {
       array: [],
@@ -28,58 +25,96 @@ export default {
   // Digits generation function
   methods: {
     getNewNumbersArray : function (repeats) {
-      console.log("EasyOneTwo")
+      console.log("BrotherThree");
+
       let help = [];
       let helpAnswer = 0;
       let currentValue = 0;
       for(let i = 0; i < repeats; i++){
 
         switch (helpAnswer) {
-            // If current step is equals to Zero, we make following
+
           case 0: {
-            currentValue = this.getRandomIntInclusive(1, 2);
+            currentValue = this.getRandomIntInclusive(1, 9);
             help.push(currentValue);
             helpAnswer += currentValue;
             break;
           }
-            // If current step is equals to One, we make following
           case 1: {
-            let list1 = [1,-1, 2];
-            currentValue = this.getRandomIntInclusive(0, 2);
+            let list1 = [-1, 1, 2, 3, 4, 5, 6, 7, 8];
+            currentValue = this.getRandomIntInclusive(0, 8);
             currentValue = list1[currentValue];
             help.push(currentValue);
             helpAnswer += currentValue;
             break;
           }
-            // If current step is equals to Two, we make following
           case 2: {
-            let list2 = [-2,-1, 1, 2];
-            currentValue = this.getRandomIntInclusive(0, 3);
+            let list2 = [-2, -1, 1, 2, 3, 4, 5, 6, 7];
+            currentValue = this.getRandomIntInclusive(0, 8);
             currentValue = list2[currentValue];
             help.push(currentValue);
             helpAnswer += currentValue;
             break;
           }
-            // If current step is equals to Three, we make following
           case 3: {
-            let list3 = [-2,-1, 1];
-            currentValue = this.getRandomIntInclusive(0, 2);
+            let list3 = [-3, -2, -1, 1, 3, 4, 5, 6];
+            currentValue = this.getRandomIntInclusive(0, 7);
             currentValue = list3[currentValue];
             help.push(currentValue);
             helpAnswer += currentValue;
             break;
           }
-            // If current step is equals to Four, we make following
           case 4: {
-            let list4 = [-2,-1];
-            currentValue = this.getRandomIntInclusive(0, 1);
+            let list4 = [-4, -3, -2, -1, 3, 4, 5];
+            currentValue = this.getRandomIntInclusive(0, 6);
             currentValue = list4[currentValue];
+            help.push(currentValue);
+            helpAnswer += currentValue;
+            break;
+          }
+          case 5: {
+            let list5 = [-5, -4, -3, 1, 2, 3, 4];
+            currentValue = this.getRandomIntInclusive(0, 6);
+            currentValue = list5[currentValue];
+            help.push(currentValue);
+            helpAnswer += currentValue;
+            break;
+          }
+          case 6: {
+            let list6 = [-6, -5, -4, -3, -1, 1, 2, 3];
+            currentValue = this.getRandomIntInclusive(0, 7);
+            currentValue = list6[currentValue];
+            help.push(currentValue);
+            helpAnswer += currentValue;
+            break;
+          }
+          case 7: {
+            let list7 = [-7, -6, -5, -4, -3, -2, -1, 1, 2];
+            currentValue = this.getRandomIntInclusive(0, 8);
+            currentValue = list7[currentValue];
+            help.push(currentValue);
+            helpAnswer += currentValue;
+            break;
+          }
+          case 8: {
+            let list8 = [-8, -7, -6, -5, -4, -3, -2, -1, 1];
+            currentValue = this.getRandomIntInclusive(0, 8);
+            currentValue = list8[currentValue];
+            help.push(currentValue);
+            helpAnswer += currentValue;
+            break;
+          }
+          case 9: {
+            let list9 = [-9, -8, -7, -6, -5, -4, -3, -2, -1];
+            currentValue = this.getRandomIntInclusive(0, 8);
+            currentValue = list9[currentValue];
             help.push(currentValue);
             helpAnswer += currentValue;
             break;
           }
         }
       }
+
       this.array = help;
       this.answer = helpAnswer;
     },
@@ -94,7 +129,6 @@ export default {
 </script>
 
 <style scoped>
-
 button {
   background-color: red; /* Green */
   border: none;
