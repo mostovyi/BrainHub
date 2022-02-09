@@ -1,6 +1,9 @@
 <template>
   <div id="app">
     <h1>Algorithms testing page</h1>
+    <p>1. Выбрать количество повторений</p>
+    <p>2. Нажать на кнопку режима</p>
+    <p>3. Нажать на кнопку Result</p>
     <input v-model.number="repeat" placeholder="Введите количество повторений">
     <p>Количество повторений: {{ repeat }}</p>
     <div>

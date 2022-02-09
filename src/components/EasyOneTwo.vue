@@ -9,37 +9,33 @@
   </div>
 </template>
 
-
 <script>
-
 // For now this function works, but input parameters are hardcoded
 export default {
   name: "EasyOneTwo",
-  data: function () {
+  data() {
     return {
       array: [],
       answer: 0
     }
   },
   // Input parameters
-  props: {
-    repeats : Number
-  },
+  props: ["repeats"],
   // Digits generation function
   methods: {
-    getNewNumbersArray : function (repeats) {
+    getNewNumbersArray: function(repeats) {
       console.log("EasyOneTwo")
-      let help = [];
-      let helpAnswer = 0;
+      let temporalArrayWithNumbers = [];
+      let interimAnswer = 0;
       let currentValue = 0;
       for(let i = 0; i < repeats; i++){
 
-        switch (helpAnswer) {
+        switch (interimAnswer) {
             // If current step is equals to Zero, we make following
           case 0: {
             currentValue = this.getRandomIntInclusive(1, 2);
-            help.push(currentValue);
-            helpAnswer += currentValue;
+            temporalArrayWithNumbers.push(currentValue);
+            interimAnswer += currentValue;
             break;
           }
             // If current step is equals to One, we make following
@@ -47,8 +43,8 @@ export default {
             let list1 = [1,-1, 2];
             currentValue = this.getRandomIntInclusive(0, 2);
             currentValue = list1[currentValue];
-            help.push(currentValue);
-            helpAnswer += currentValue;
+            temporalArrayWithNumbers.push(currentValue);
+            interimAnswer += currentValue;
             break;
           }
             // If current step is equals to Two, we make following
@@ -56,8 +52,8 @@ export default {
             let list2 = [-2,-1, 1, 2];
             currentValue = this.getRandomIntInclusive(0, 3);
             currentValue = list2[currentValue];
-            help.push(currentValue);
-            helpAnswer += currentValue;
+            temporalArrayWithNumbers.push(currentValue);
+            interimAnswer += currentValue;
             break;
           }
             // If current step is equals to Three, we make following
@@ -65,8 +61,8 @@ export default {
             let list3 = [-2,-1, 1];
             currentValue = this.getRandomIntInclusive(0, 2);
             currentValue = list3[currentValue];
-            help.push(currentValue);
-            helpAnswer += currentValue;
+            temporalArrayWithNumbers.push(currentValue);
+            interimAnswer += currentValue;
             break;
           }
             // If current step is equals to Four, we make following
@@ -74,19 +70,17 @@ export default {
             let list4 = [-2,-1];
             currentValue = this.getRandomIntInclusive(0, 1);
             currentValue = list4[currentValue];
-            help.push(currentValue);
-            helpAnswer += currentValue;
+            temporalArrayWithNumbers.push(currentValue);
+            interimAnswer += currentValue;
             break;
           }
         }
       }
-      this.array = help;
-      this.answer = helpAnswer;
+      this.array = temporalArrayWithNumbers;
+      this.answer = interimAnswer;
     },
     // Generates random values
-    getRandomIntInclusive : function (min, max) {
-      min = Math.ceil(min);
-      max = Math.floor(max);
+    getRandomIntInclusive: function(min, max) {
       return Math.floor(Math.random() * (max - min + 1)) + min; //Максимум и минимум включаются
     }
   }
@@ -94,15 +88,14 @@ export default {
 </script>
 
 <style scoped>
-
-button {
-  background-color: red; /* Green */
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-}
+  button {
+    background-color: red; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
 </style>

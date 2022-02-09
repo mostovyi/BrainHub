@@ -12,74 +12,69 @@
 <script>
 export default {
   name: "EasyOneFour",
-  data: function () {
+  data() {
     return {
       array: [],
       answer: 0
     }
   },
   // Input parameters
-  props: {
-    repeats : Number
-  },
+  props: ["repeats"],
   // Digits generation function
   methods: {
-    rangeOneTwo : function (repeats) {
+    rangeOneTwo: function(repeats) {
       let help = [];
-      let helpAnswer = 0;
-      let currentValue = 0;
+      let temporalArrayWithNumbers = 0;
+      let interimAnswer = 0;
       for(let i = 0; i < repeats; i++){
 
-        switch (helpAnswer) {
+        switch (interimAnswer) {
 
           case 0: {
-            currentValue = this.getRandomIntInclusive(1, 4);
-            help.push(currentValue);
-            helpAnswer += currentValue;
+            interimAnswer = this.getRandomIntInclusive(1, 4);
+            help.push(interimAnswer);
+            temporalArrayWithNumbers += interimAnswer;
             break;
           }
           case 1: {
             let list1 = [-1, 1, 2, 3];
-            currentValue = this.getRandomIntInclusive(0, 3);
-            currentValue = list1[currentValue];
-            help.push(currentValue);
-            helpAnswer += currentValue;
+            interimAnswer = this.getRandomIntInclusive(0, 3);
+            interimAnswer = list1[interimAnswer];
+            help.push(interimAnswer);
+            temporalArrayWithNumbers += interimAnswer;
             break;
           }
           case 2: {
             let list2 = [-2, -1, 1, 2];
-            currentValue = this.getRandomIntInclusive(0, 3);
-            currentValue = list2[currentValue];
-            help.push(currentValue);
-            helpAnswer += currentValue;
+            interimAnswer = this.getRandomIntInclusive(0, 3);
+            interimAnswer = list2[interimAnswer];
+            help.push(interimAnswer);
+            temporalArrayWithNumbers += interimAnswer;
             break;
           }
           case 3: {
             let list3 = [-3, -2, -1, 1];
-            currentValue = this.getRandomIntInclusive(0, 3);
-            currentValue = list3[currentValue];
-            help.push(currentValue);
-            helpAnswer += currentValue;
+            interimAnswer = this.getRandomIntInclusive(0, 3);
+            interimAnswer = list3[interimAnswer];
+            help.push(interimAnswer);
+            temporalArrayWithNumbers += interimAnswer;
             break;
           }
           case 4: {
             let list4 = [-4, -3, -2, -1];
-            currentValue = this.getRandomIntInclusive(0, 3);
-            currentValue = list4[currentValue];
-            help.push(currentValue);
-            helpAnswer += currentValue;
+            interimAnswer = this.getRandomIntInclusive(0, 3);
+            interimAnswer = list4[interimAnswer];
+            help.push(interimAnswer);
+            temporalArrayWithNumbers += interimAnswer;
             break;
           }
         }
       }
-
       this.array = help;
-      this.answer = helpAnswer;
+      this.answer = temporalArrayWithNumbers;
     },
     // Generates random values
-    getRandomIntInclusive : function (min, max) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
+    getRandomIntInclusive: function(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min; //Максимум и минимум включаются
     }
   }
