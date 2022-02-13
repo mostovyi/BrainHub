@@ -70,14 +70,17 @@ export default {
 
     // Starting our timer, has to update this.currentValue each this.speed * 1000 milliseconds
     startTimer: function () {
+      // Needed for setting on 0, if we are clicking one more time on Generate Button without page update
       this.sequenceNumber = 0;
-      for(let number of this.numberArray) {
-        setTimeout(this.updateValue(), this.speed * 1000);
-        this.sequenceNumber = this.numberArray.indexOf(number) + 1;
-        console.log(this.sequenceNumber)
-      }
-    },
-    updateValue: function () { this.currentValue = this.numberArray[this.sequenceNumber]; }
+      // initialize all calls right away
+      this.numberArray.forEach(() => {
+        setTimeout(() => {
+          this.currentValue = this.numberArray[this.sequenceNumber];
+          ++this.sequenceNumber;
+          console.log(this.sequenceNumber + " " + this.currentValue);
+        }, this.speed * 1000);
+      });
+    }
   }
 }
 </script>

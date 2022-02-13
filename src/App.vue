@@ -13,7 +13,6 @@
 //Components import
 import AlgorithmsUI from "@/components/AlgorithmsUI.vue";
 
-
 export default {
   name: 'App',
   data: function () {
